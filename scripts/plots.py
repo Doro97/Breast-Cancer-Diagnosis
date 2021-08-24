@@ -1,3 +1,9 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+
 def plot_hist(df:pd.DataFrame, column:str, color:str)->None:
     # plt.figure(figsize=(15, 10))
     # fig, ax = plt.subplots(1, figsize=(12, 7))
