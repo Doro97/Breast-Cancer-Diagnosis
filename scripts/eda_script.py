@@ -53,3 +53,20 @@ def fix_missing_ffill(df, col):
 def fix_missing_bfill(df, col):
     df[col] = df[col].fillna(method='bfill')
     return df[col]
+
+## OUTLIERS ##
+
+ # Identifying outliers using IQR score
+def IQR_Score(df:pd.DataFrame):
+    """This function prints out the IQR Score of each of 
+    the columns/ features"""
+    Q1 = df.quantile(0.25)
+    Q3 = df.quantile(0.75)
+    IQR = Q3 - Q1
+    print(IQR)
+
+#Identify outliers using the Z score
+from scipy import stats
+def Z_Score(df:pd.DataFrame):
+    z = np.abs(stats.zscore(df))
+    print(z)   
