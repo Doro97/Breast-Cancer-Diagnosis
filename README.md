@@ -26,3 +26,17 @@ The data is extracted from Kaggle.. Features in the data are computed from a dig
 10. Symmetry
 
 The mean, standard error and "worst" or largest (mean of the three largest values) of these features were computed for each image, resulting in 30 features
+
+# Data Exploration
+Conducted an exploratory data analysis on the data & communicated useful insights. This includes: identification and treating all missing values and outliers in the dataset by using appropriate methods,performing feature extraction and scaling 
+This is found on the notebooks folder
+
+
+# Causal Learning
+1. Split data into training and hold-out set 
+2. Create a causal graph using all training data and get the insights (this will be considered the ground truth)
+3. Create new causal graphs using increasing fractions of the data and compare with the ground truth graph
+4. The comparison can be done with a Jaccard Similarity Index, measuring the intersection and union of the graph edges
+5. After reaching a stable causal graph, select only variables that point directly to the target variable
+6. Train one model using all variables and another using only the variables selected by the graph
+7. Measure how much each of the models overfit the hold-out set created in step 
