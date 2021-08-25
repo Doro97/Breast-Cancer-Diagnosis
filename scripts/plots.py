@@ -55,3 +55,12 @@ def plot_scatter(df: pd.DataFrame, x_col: str, y_col: str, title: str, hue: str,
     plt.xticks(fontsize=14)
     plt.yticks( fontsize=14)
     plt.show()
+
+def correlation(df:pd.DataFrame):
+    corr=df.corr()
+    matrix=np.triu(df.corr())
+    sns.heatmap(corr,annot=True,square=True,mask=matrix)
+    fig=plt.gcf()
+    figsize=fig.get_size_inches()
+    fig.set_size_inches(figsize*4)
+    plt.show()
